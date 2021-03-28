@@ -8,6 +8,8 @@ A new Flutter project.
 - widgets contain other widgets
 
 # main.dart 
+## Creating Normal Hello App
+![image](https://user-images.githubusercontent.com/47095611/112745594-41322000-8fc7-11eb-9159-fc711cecb4f4.png)
 ```
 import 'package:flutter/material.dart';
 ```
@@ -34,6 +36,3 @@ class MyApp extends StatelessWidget {
 - automatically done by flutter
 - needs to return a widget hence Widget
 - need to return MaterialApp() to render the app, also takes named arguments, home: is the core widget
-
-![image](https://user-images.githubusercontent.com/47095611/112745594-41322000-8fc7-11eb-9159-fc711cecb4f4.png)
-- basic app created
