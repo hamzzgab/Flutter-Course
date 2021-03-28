@@ -51,3 +51,18 @@ class MyApp extends StatelessWidget {
 
 # Building a Widget Tree
 ![image](https://user-images.githubusercontent.com/47095611/112750279-5f0e7d80-8fe5-11eb-8e78-2391a9aaf85a.png)
+
+`appBar:` is for the top title
+  - `AppBar()` for the contents inside it
+  - `title: Text()`
+`body:` is for the contents inside it
+```
+return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('My First App'),
+        ),
+        body: Text('This is my default text! '),
+      ),
+    );
+```
