@@ -71,9 +71,8 @@ return MaterialApp(
   - Cannot add more widgets inside a body
   - List is a group of data 
   - `<Widget>[]` is a group of widgets
-
-- `RaisedButton()` / `ElevatedButton()` either of them can be used
-  - 
+  - `RaisedButton()` or `ElevatedButton()` either of them can be used
+  
 
 ```
 body: Column(
