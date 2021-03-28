@@ -26,7 +26,7 @@ void main() {
   runApp(MyApp());
 }
 ```
-For *one expression* you can use this<br>
+For **one expression** you can use this<br>
 ```
 void main() => runApp(MyApp());
 ```
