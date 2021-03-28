@@ -1,14 +1,11 @@
 # quiz_app
-
-A new Flutter project.
-
-## Getting Started
 - To first run the app use `flutter run`
 - every flutter app is a widget
 - widgets contain other widgets
 
-# main.dart
-## Creating Normal Hello App 🍍
+1. 
+
+# Creating Normal Hello App 🍍
 ![image](https://user-images.githubusercontent.com/47095611/112745594-41322000-8fc7-11eb-9159-fc711cecb4f4.png)
 
 For using the built in widgets
@@ -49,7 +46,7 @@ class MyApp extends StatelessWidget {
 
 ```
 
-# Building a Widget Tree
+# Building a Widget Tree 🌲
 ![image](https://user-images.githubusercontent.com/47095611/112750279-5f0e7d80-8fe5-11eb-8e78-2391a9aaf85a.png)
 
 `appBar:` is for the top title
