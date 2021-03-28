@@ -29,8 +29,8 @@ void main() {
 *Need to memorize this* (Automatically done by flutter) <br>
 - returns a widget hence Widget <br>
 - returns `MaterialApp()` to render the app which takes named arguments
-  1. `home:` is the core widget
-  2. `Text('Hello!')` is where the text that you want to display gets printed
+  1. `home:` the core widget
+  2. `Text('Hello!')` where that you want to display gets printed
 ```
 class MyApp extends StatelessWidget {  
   Widget build(BuildContext context) {
