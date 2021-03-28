@@ -27,7 +27,7 @@ void main() {
 ```
 
 *Need to memorize this* <br>
-Automatically done by flutter <br>
+> Automatically done by flutter <br>
 Needs to return a widget hence Widget <br>
 Need to return `MaterialApp()` to render the app, also takes named arguments <br>
 `home:` is the core widget <br>
