@@ -3,7 +3,7 @@
 - every flutter app is a widget
 - widgets contain other widgets
 
-1. [Creating Normal Hello App](-creating-normal-hello-app-🍍)
+1. [Creating Normal Hello App](creating-normal-hello-app-🍍)
 
 # Creating Normal Hello App 🍍
 ![image](https://user-images.githubusercontent.com/47095611/112745594-41322000-8fc7-11eb-9159-fc711cecb4f4.png)
