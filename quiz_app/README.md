@@ -155,3 +155,12 @@ RaisedButton(
             ),
 ```
 
+**Anonymous Functions**
+`onPressed: () => print('Answer 2 chosen!'),`
+```
+onPressed: () {
+                print('Answer 3 Chosen!');
+              },
+```
+
+
