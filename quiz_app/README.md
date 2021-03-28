@@ -94,9 +94,60 @@ body: Column(
           ],
         ),
   ```
+  # Connecting Fuctions & Buttons
   
   ![image](https://user-images.githubusercontent.com/47095611/112752088-ec0a0480-8fee-11eb-9141-d7a84483a716.png)
 
   
   ![image](https://user-images.githubusercontent.com/47095611/112752080-e2809c80-8fee-11eb-9702-59c950b532ed.png)
+
+```
+class MyApp extends StatelessWidget {
+  void answerQuestion() {
+    print('Answer Chosen!');
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    var questions = ["What's your fav color", "What's your fav animal"];
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('My First App'),
+        ),
+        body: Column(
+          children: <Widget>[
+            Text('The Question!'),
+            RaisedButton(
+              child: Text('Answer 1'),
+              onPressed: answerQuestion,
+            ),
+            RaisedButton(
+              child: Text('Answer 2'),
+              onPressed: null,
+            ),
+            RaisedButton(
+              child: Text('Answer 2'),
+              onPressed: null,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+```
+All The functions that work inside the class should be in the class *stand alone classes*
+```
+void answerQuestion() {
+    print('Answer Chosen!');
+  }
+```
+
+```
+RaisedButton(
+              child: Text('Answer 1'),
+              onPressed: answerQuestion,
+            ),
+```
 
