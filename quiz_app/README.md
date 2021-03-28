@@ -180,7 +180,7 @@ children: <Widget>[
 | Data can change(externally) | Data can change(externally) |
 | Gets (re)-rendered when input data changes | Gets (re)-rendered when input data or local State changes |
 
-Converting stateless to Statefull
+###Converting stateless to Statefull
 1. First we create a class 
    - Returns `MyAppState()` so this is connected to the main class
 ```
