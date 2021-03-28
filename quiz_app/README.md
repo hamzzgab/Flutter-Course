@@ -196,6 +196,12 @@ class MyApp extends StatefulWidget {
 ```
 class MyAppState extends State<MyApp> {
 ```
+Private class
+  - Can be only used inside the main.dart file
+```
+class _MyAppState extends State<MyApp> {
+```
+
 3. Functions where things have to be changed are written
    - `seState()` allows only the specific values that have to be changed to change rather than the app waiting on all the values to change which would cause it to slow down
 ```
@@ -206,3 +212,31 @@ void answerQuestion() {
   }
 ```
 
+#### Widget from a new file
+**question.dart**
+```
+import 'package:flutter/material.dart';
+
+class Question extends StatelessWidget {  
+  final String questionText;
+
+  Question(this.questionText);
+  
+  @override
+  Widget build(BuildContext context) {
+    return Text(questionText);
+  }
+}
+```
+- `final String questionText;` value will never change after its initialization in the constructor
+| `Question(this.questionText);` | :arrow_right: **positional argument**
+| `Question({this.questionText});` | :arrow_right: **named argument**
+
+**main.dart**
+```
+children: <Widget>[
+            // calls the question file
+            Question(questions[_questionIndex]),
+```
+- `import './question.dart';` importing the `question.dart` file 
+- `Question()` constructor that calls the class and passes the value
