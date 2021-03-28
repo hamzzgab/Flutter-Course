@@ -55,6 +55,7 @@ class MyApp extends StatelessWidget {
 `appBar:` is for the top title
   - `AppBar()` for the contents inside it
   - `title: Text()`<br>
+  
 `body:` is for the contents inside it
 ```
 return MaterialApp(
