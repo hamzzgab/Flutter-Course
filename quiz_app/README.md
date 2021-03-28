@@ -7,8 +7,7 @@ A new Flutter project.
 - every flutter app is a widget
 - widgets contain other widgets
 
-# main.dart
-## Creating Normal Hello App 🍍
+# Creating Normal Hello App 🍍
 ![image](https://user-images.githubusercontent.com/47095611/112745594-41322000-8fc7-11eb-9159-fc711cecb4f4.png)
 
 For using the built in widgets
