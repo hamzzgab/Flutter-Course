@@ -180,3 +180,28 @@ children: <Widget>[
 | Data can change(externally) | Data can change(externally) |
 | Gets (re)-rendered when input data changes | Gets (re)-rendered when input data or local State changes |
 
+Converting stateless to Statefull
+1. First we create a class 
+   - Returns `MyAppState()` so this is connected to the main class
+```
+class MyApp extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return MyAppState();
+  }
+}
+```
+2. The main class where all the code is
+   - `<MyApp>` is a pointer to the MyApp class which is a stateful widget
+```
+class MyAppState extends State<MyApp> {
+```
+3. Functions where things have to be changed are written
+```
+void answerQuestion() {
+    setState(() {
+      questionIndex++;
+    });   
+  }
+```
+
