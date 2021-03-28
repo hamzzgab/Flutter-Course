@@ -26,11 +26,12 @@ void main() {
 }
 ```
 
-*Need to memorize this*
-Automatically done by flutter
-Needs to return a widget hence Widget
-Need to return `MaterialApp()` to render the app, also takes named arguments
-`home:` is the core widget where `Text('Hello!')` is where the text that you want to display gets printed
+*Need to memorize this* <br>
+Automatically done by flutter <br>
+Needs to return a widget hence Widget <br>
+Need to return `MaterialApp()` to render the app, also takes named arguments <br>
+`home:` is the core widget <br>
+`Text('Hello!')` is where the text that you want to display gets printed <br>
 
 ```
 class MyApp extends StatelessWidget {  
