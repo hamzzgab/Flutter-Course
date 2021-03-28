@@ -55,8 +55,7 @@ class MyApp extends StatelessWidget {
 `appBar:` is for the top title
   - `AppBar()` for the contents inside it
   - `title: Text()`<br>
-  
-`body:` is for the contents inside it
+
 ```
 return MaterialApp(
       home: Scaffold(
@@ -67,3 +66,31 @@ return MaterialApp(
       ),
     );
 ```
+
+`body:` is for the contents inside it
+  - Cannot add more widgets inside a body
+  - List is a group of data 
+  - `<Widget>[]` is a group of widgets
+
+- `RaisedButton()` / `ElevatedButton()` either of them can be used
+  - 
+
+```
+body: Column(
+          children: <Widget>[
+            Text('The Question!'),
+            RaisedButton(
+              child: Text('Answer 1'),
+              onPressed: null,
+            ),
+            RaisedButton(
+              child: Text('Answer 2'),
+              onPressed: null,
+            ),
+            RaisedButton(
+              child: Text('Answer 2'),
+              onPressed: null,
+            ),
+          ],
+        ),
+  ```
