@@ -228,7 +228,7 @@ class Question extends StatelessWidget {
   }
 }
 ```
-- `final String questionText;` value will never change after its initialization in the constructor
+- `final String questionText;` value will never change after its initialization in the constructor<br>
 `Question(this.questionText);` :arrow_right: **positional argument**<br>
 `Question({this.questionText});` :arrow_right: **named argument**
 
