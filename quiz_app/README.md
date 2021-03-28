@@ -5,7 +5,7 @@ A new Flutter project.
 ## Getting Started
 - To first run the app use "**flutter run**"
 
-##Files
+## Files
 - Files are for configuration
 
 - idea folder holds config for android studio (not need to change anything in there)
