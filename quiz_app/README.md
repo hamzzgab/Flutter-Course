@@ -197,6 +197,7 @@ class MyApp extends StatefulWidget {
 class MyAppState extends State<MyApp> {
 ```
 3. Functions where things have to be changed are written
+   - `seState()` allows only the specific values that have to be changed to change rather than the app waiting on all the values to change which would cause it to slow down
 ```
 void answerQuestion() {
     setState(() {
