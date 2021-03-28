@@ -36,3 +36,4 @@ class MyApp extends StatelessWidget {
 - need to return MaterialApp() to render the app, also takes named arguments, home: is the core widget
 
 ![image](https://user-images.githubusercontent.com/47095611/112745594-41322000-8fc7-11eb-9159-fc711cecb4f4.png)
+- basic app created
