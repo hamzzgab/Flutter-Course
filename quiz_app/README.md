@@ -65,6 +65,9 @@ return MaterialApp(
     );
 ```
 
+![image](https://user-images.githubusercontent.com/47095611/112751682-de537f80-8fec-11eb-8f9c-c74288b2c93e.png)
+
+
 `body:` is for the contents inside it
   - Cannot add more widgets inside a body
   - List is a group of data 
