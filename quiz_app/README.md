@@ -164,5 +164,13 @@ onPressed: () {
                 print('Answer 3 Chosen!');
               },
 ```
-
+**Accessing the elements inside the list**
+```
+children: <Widget>[
+            Text(questions[0]),
+```
+```
+children: <Widget>[
+            Text(questions.elementAt(0)),
+```
 
