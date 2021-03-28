@@ -173,4 +173,10 @@ children: <Widget>[
 children: <Widget>[
             Text(questions.elementAt(0)),
 ```
+**Stateless vs Stateful**
+| Stateless | Stateful |
+|-----|-----|
+| Input Data :arrow_right: Widget :arrow_right: Renders UI | Input Data :arrow_right: Widget + Internal State :arrow_right: Renders UI |
+| Data can change(externally) | Data can change(externally) |
+| Gets (re)-rendered when input data changes | Gets (re)-rendered when input data or local State changes |
 
