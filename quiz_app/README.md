@@ -49,7 +49,7 @@ class MyApp extends StatelessWidget {
 
 ```
 
-# Building a Widget Tree
+# Building a Widget Tree 🌲
 ![image](https://user-images.githubusercontent.com/47095611/112750279-5f0e7d80-8fe5-11eb-8e78-2391a9aaf85a.png)
 
 `appBar:` is for the top title
