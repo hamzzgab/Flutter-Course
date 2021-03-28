@@ -7,14 +7,14 @@ A new Flutter project.
 - every flutter app is a widget
 - widgets contain other widgets
 
-# main.dart 
+# main.dart
 ## Creating Normal Hello App
 ![image](https://user-images.githubusercontent.com/47095611/112745594-41322000-8fc7-11eb-9159-fc711cecb4f4.png)
 ```
 import 'package:flutter/material.dart';
 ```
 - For using the built in widgets
-- So we don't have to make our own widgets 
+- So we don't have to make our own widgets
 
 ```
 void main() {
@@ -23,7 +23,7 @@ void main() {
 ```
 - runs the flutter app
 - draws something onto the Screen
-- so we have to pass MyApp() 
+- so we have to pass MyApp()
 
 ```
 class MyApp extends StatelessWidget {  
