@@ -1,11 +1,9 @@
 # quiz_app
-
-A new Flutter project.
-
-## Getting Started
 - To first run the app use `flutter run`
 - every flutter app is a widget
 - widgets contain other widgets
+
+1. 
 
 # Creating Normal Hello App 🍍
 ![image](https://user-images.githubusercontent.com/47095611/112745594-41322000-8fc7-11eb-9159-fc711cecb4f4.png)
