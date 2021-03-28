@@ -8,7 +8,7 @@ A new Flutter project.
 - widgets contain other widgets
 
 # main.dart
-## Creating Normal Hello App
+## Creating Normal Hello App 🍍
 ![image](https://user-images.githubusercontent.com/47095611/112745594-41322000-8fc7-11eb-9159-fc711cecb4f4.png)
 
 For using the built in widgets
@@ -26,8 +26,7 @@ void main() {
 }
 ```
 
-*Need to memorize this* <br>
-> Automatically done by flutter <br>
+*Need to memorize this* (Automatically done by flutter) <br>
 Needs to return a widget hence Widget <br>
 Need to return `MaterialApp()` to render the app, also takes named arguments <br>
 `home:` is the core widget <br>
