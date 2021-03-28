@@ -17,13 +17,18 @@ So we don't have to make our own widgets
 import 'package:flutter/material.dart';
 ```
 
-Runs the flutter app
-Draws something onto the Screen
-So we have to pass `MyApp()`
+Runs the flutter app<br>
+Draws something onto the Screen<br>
+So we have to pass `MyApp()`<br>
+The parenthesis instantiates the class
 ```
 void main() {
   runApp(MyApp());
 }
+```
+For one expression you can use this<br>
+```
+void main() => runApp(MyApp());
 ```
 
 *Need to memorize this* (Automatically done by flutter) <br>
@@ -31,10 +36,15 @@ void main() {
 - returns `MaterialApp()` to render the app which takes named arguments
   1. `home:` the core widget
   2. `Text('Hello!')` where that you want to display gets printed
+- `@override` is a decorater provided by Flutter
+  - makes the code clear and clear
+  - overriding the build method
 ```
-class MyApp extends StatelessWidget {  
+class MyApp extends StatelessWidget {
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(home: Text('Hello!'));
   }
 }
+
 ```
