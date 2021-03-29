@@ -240,3 +240,27 @@ children: <Widget>[
 ```
 - `import './question.dart';` importing the `question.dart` file 
 - `Question()` constructor that calls the class and passes the value
+
+#### Styling & Layout
+```
+return Container(
+      width: double.infinity,
+      margin: EdgeInsets.all(10),
+      child: Text(
+        questionText,
+        style: TextStyle(fontSize: 28),
+        textAlign: TextAlign.center,
+      ),
+    );
+```
+1. First wrap the content inside into a container
+2. `width: double.infinity,` allow the width of the content to be set to infinity
+3. `margin: EdgeInsets.all(10),` this sets the padding around the entire content, `EdgeInsets.only()` allows for a specific side
+    - padding is the internal spacing of the content
+    - border can be given to the outer portion of the content
+    - margin is a spacing that is given to the entire content
+4. Text styling
+```
+ style: TextStyle(fontSize: 28),
+        textAlign: TextAlign.center,
+```
