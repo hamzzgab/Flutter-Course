@@ -507,3 +507,49 @@ class Answer extends StatelessWidget {
 | True | False | True |
 | False | False | False |
 
+![image](https://user-images.githubusercontent.com/47095611/113052870-46f55480-91c5-11eb-8ff2-ae122939a2d7.png)
+
+`main.dart`
+```
+final questions = const [
+    {
+      'questionText': "What's your fav color? ",
+      'answers': ['Black', 'Red', 'Green', 'White']
+    },
+    {
+      'questionText': "What's your fav animal? ",
+      'answers': ['Dog', 'Cat', 'Lion', 'Zebra']
+    },
+    {
+      'questionText': "Who's your fav instructor? ",
+      'answers': ['Hamzz', 'Hamzz', 'Hamzz', 'Hamzz']
+    }
+  ];
+```
+We have to define the variables as final - const when using them outside the build method
+
+```
+if (_questionIndex < questions.length) {
+      print('We have more questions');
+    } else {
+      print('No mo');
+    }
+```
+Simple if else statements checking the length
+
+```
+body: _questionIndex < questions.length
+            ? Column(
+                children: <Widget>[
+                  Question(questions[_questionIndex]['questionText']),
+                  ...(questions[_questionIndex]['answers'] as List<String>)
+                      .map((answer) {
+                    return Answer(_answerQuestion, answer);
+                  }).toList()
+                ],
+              )
+            // else block
+            : Center(child: Text('You did it')),
+```
+The stuff after the ? gets executed if true, for else stuff after the `:` gets executed
+
