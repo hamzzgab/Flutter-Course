@@ -355,4 +355,130 @@ class _MyAppState extends State<MyApp> {
 `Answer(_answerQuestion)` is a pointer to the `_answerQuestion` function without the paranthesis because you want to execute the function *forwards the pointer to the function*
 
 
+#### Mapping Lists To Widgets
+![image](https://user-images.githubusercontent.com/47095611/112953998-9c951700-915b-11eb-8a98-f08d926e2d56.png)
 
+
+`main.dart`
+```
+import 'package:flutter/material.dart';
+import './question.dart';
+import './answer.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return _MyAppState();
+  }
+}
+
+class _MyAppState extends State<MyApp> {
+  var _questionIndex = 0;
+
+  void _answerQuestion() {
+    setState(() {
+      _questionIndex++;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    // Map is a collection of key value pairs
+    // key could be a number or string
+    // Shorthand way to make it long way is using Map()
+    var questions = [
+      {
+        'questionText': "What's your fav color? ",
+        'answers': ['Black', 'Red', 'Green', 'White']
+      },
+      {
+        'questionText': "What's your fav animal? ",
+        'answers': ['Dog', 'Cat', 'Lion', 'Zebra']
+      },
+      {
+        'questionText': "Who's your fav instructor? ",
+        'answers': ['Hamzz', 'Hamzz', 'Hamzz', 'Hamzz']
+      }
+    ];
+
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('My First App'),
+        ),
+        body: Column(
+          children: <Widget>[
+            Question(questions[_questionIndex]['questionText']),
+
+            ...(questions[_questionIndex]['answers'] as List<String>)
+                .map((answer) {
+              // returns an answer widget
+
+              return Answer(_answerQuestion, answer);
+            }).toList()
+          ],
+        ),
+      ),
+    );
+  }
+}
+```
+
+- `var question = [{}]` mapping
+  1. Map is a collection of key value pairs
+  2. Key could be a number or string, `'questionText':` & `'answers':` are the two keys
+  3. Shorthand way to make it long way is using the `Map()` class
+ 
+- `Question(questions[_questionIndex]['questionText'])` 
+  1. First calls the questions function
+  2. `[_questionIndex]` is firstly mapped
+  3. `['questionText']` with the same index is read and sent to the Question constructor
+
+```
+...(questions[_questionIndex]['answers'] as List<String>)
+                .map((answer) {
+              // returns an answer widget
+
+              return Answer(_answerQuestion, answer);
+            }).toList()
+```
+1. `...` is a spread operator
+ - It takes a list and they pull all the values out of the list
+ - Then adds them to the surrounding list as individual values
+2. `(questions[_questionIndex]['answers'] as List<String>).map((answer){`
+  - `questions[_questionIndex]['answers']` maps the answers of the current index
+  - `List<String>` prepares the map function that a List full of Strings is going to be sent to the `.map((answer)
+  - `.map((answer)` stores the value in the field answer
+3. `return Answer(_answerQuestion, answer);` calls the constructor in the `answer.dart` file passing the fucntion and the answer text
+4. `.toList()` generates a new list
+
+`answer.dart`
+```
+import 'package:flutter/material.dart';
+
+class Answer extends StatelessWidget {
+  final Function selectHandler;
+  final String answerText;
+
+  Answer(this.selectHandler, this.answerText);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        width: double.infinity,
+        child: RaisedButton(
+          color: Colors.blue,
+          textColor: Colors.white,
+          child: Text(answerText),
+          onPressed: selectHandler,
+        ));
+  }
+}
+```
+`final String answerText;` adding another variable that will catch the answers that have been sent from the map function
+
+ `Answer(this.selectHandler, this.answerText);` the answers will then be stored in this contructor
+ 
+ `child: Text(answerText),` and printed using this Text box
