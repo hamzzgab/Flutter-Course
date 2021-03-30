@@ -11,7 +11,7 @@
     - [Stateless vs Stateful](#stateless-vs-stateful)
     - [Converting stateless to Statefull](#converting-stateless-to-statefull)
 4. [Widget from a new file 📁](#widget-from-a-new-file-)
-    - [Styling & Layout](#styling-&-layout)
+    - [Styling & Layout](#styling--layout)
 6. [Passing Callback Functions Around 🤙](#passing-callback-functions-around-)
 7. [Mapping Lists To Widgets 🗺️](#mapping-lists-to-widgets-%EF%B8%8F)
 
