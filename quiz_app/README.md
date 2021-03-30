@@ -14,7 +14,8 @@
     - [Styling & Layout](#styling--layout)
 6. [Passing Callback Functions Around 🤙](#passing-callback-functions-around-)
 7. [Mapping Lists To Widgets 🗺️](#mapping-lists-to-widgets-%EF%B8%8F)
-8. ['if' Statements](#if-Statements)
+8. [final vs const ♾️](#final-vs-const-)
+9. ['if' Statements](#if-Statements)
 
 # Creating Normal Hello App 🍍
 ![image](https://user-images.githubusercontent.com/47095611/112745594-41322000-8fc7-11eb-9159-fc711cecb4f4.png)
@@ -492,6 +493,20 @@ class Answer extends StatelessWidget {
  `Answer(this.selectHandler, this.answerText);` the answers will then be stored in this contructor
  
  `child: Text(answerText),` and printed using this Text box
+
+# final vs const ♾️
+- const - compiled time constant (implicitly means run time constant)
+- all objects are stored in memory,
+- the objects what dart stores in thevariables are the pointers at the objects in the memory, so the addresses of the objects in memory stores the object only once and takes the address in different places
+- when we turn a variable into a constaant it implicitly also treats the value as a constant
+- if the value will never change make it a const
+
+:heavy_check_mark: `var dummy = ['Hello'];`
+:x: `var dummy = const ['Hello'];` Const would give a error cause we can't change the value
+- Modifies the original list
+`dummy.add('Max'); `
+
+
 
 # 'if' Statements
 
