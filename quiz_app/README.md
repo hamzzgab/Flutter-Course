@@ -16,6 +16,7 @@
 7. [Mapping Lists To Widgets 🗺️](#mapping-lists-to-widgets-%EF%B8%8F)
 8. [final vs const ♾️](#final-vs-const-%EF%B8%8F)
 9. ['if' Statements](#if-Statements)
+10. [Splitting the App into Widgets 💔](#splitting-the-app-into-widgets-)
 
 # Creating Normal Hello App 🍍
 ![image](https://user-images.githubusercontent.com/47095611/112745594-41322000-8fc7-11eb-9159-fc711cecb4f4.png)
@@ -568,4 +569,111 @@ body: _questionIndex < questions.length
             : Center(child: Text('You did it')),
 ```
 The stuff after the ? gets executed if true, for else stuff after the `:` gets executed
+
+# Splitting the App into Widgets 💔
+`quiz.dart`
+```
+import 'package:flutter/material.dart';
+import './question.dart';
+import './answer.dart';
+
+class Quiz extends StatelessWidget {
+  final Function answerQuestion;
+  final List<Map<String, Object>> questions;
+  final int questionIndex;
+
+  Quiz(
+      {@required this.questions,
+      @required this.answerQuestion,
+      @required this.questionIndex});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: <Widget>[
+        Question(questions[questionIndex]['questionText']),
+        ...(questions[questionIndex]['answers'] as List<String>).map((answer) {
+          return Answer(answerQuestion, answer);
+        }).toList()
+      ],
+    );
+  }
+}
+```
+
+`result.dart`
+```
+import 'package:flutter/material.dart';
+
+class Result extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(child: Text('You did it'));
+  }
+}
+```
+
+`main.dart`
+```
+import 'package:flutter/material.dart';
+import './quiz.dart';
+import './result.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return _MyAppState();
+  }
+}
+
+class _MyAppState extends State<MyApp> {
+  var _questionIndex = 0;
+  final _questions = const [
+    {
+      'questionText': "What's your fav color? ",
+      'answers': ['Black', 'Red', 'Green', 'White']
+    },
+    {
+      'questionText': "What's your fav animal? ",
+      'answers': ['Dog', 'Cat', 'Lion', 'Zebra']
+    },
+    {
+      'questionText': "Who's your fav instructor? ",
+      'answers': ['Hamzz', 'Hamzz', 'Hamzz', 'Hamzz']
+    }
+  ];
+
+  void _answerQuestion() {
+    setState(() {
+      _questionIndex++;
+    });
+    if (_questionIndex < _questions.length) {
+      print('We have more questions');
+    } else {
+      print('No mo');
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('My First App'),
+        ),
+        // if true after question mark it runs
+        body: _questionIndex < _questions.length
+            ? Quiz(
+                answerQuestion: _answerQuestion,
+                questionIndex: _questionIndex,
+                questions: _questions)
+            : Result(),
+      ),
+    );
+  }
+}
+```
+
 
