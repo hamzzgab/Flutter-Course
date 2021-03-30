@@ -677,3 +677,157 @@ class _MyAppState extends State<MyApp> {
 ```
 
 
+# Getters & 'else-if'
+`quiz.dart`
+```
+import 'package:flutter/material.dart';
+import './question.dart';
+import './answer.dart';
+
+class Quiz extends StatelessWidget {
+  final Function answerQuestion;
+  final List<Map<String, Object>> questions;
+  final int questionIndex;
+
+  Quiz(
+      {@required this.questions,
+      @required this.answerQuestion,
+      @required this.questionIndex});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: <Widget>[
+        Question(questions[questionIndex]['questionText']),
+        ...(questions[questionIndex]['answers'] as List<Map<String, Object>>)
+            .map((answer) {
+          // only address is passed using () =>
+          // now it executs the function
+          return Answer(() => answerQuestion(answer['score']), answer['text']);
+        }).toList()
+      ],
+    );
+  }
+}
+```
+
+`result.dart`
+```
+import 'package:flutter/material.dart';
+
+class Result extends StatelessWidget {
+  final int resultScore;
+
+  Result(this.resultScore);
+
+  // getter is a mixture of propety and method
+  // type of value you want t derive
+  // add get keyword and any word you want
+
+  String get resultPhrase {
+    var resultText = 'You did it';
+    if (resultScore <= 8) {
+      resultText = 'You are awesome and innocent';
+    } else if (resultScore <= 12) {
+      resultText = 'Pretty likeable';
+    } else if (resultScore <= 16) {
+      resultText = 'You are strange';
+    } else {
+      resultText = 'You are so bad';
+    }
+    return resultText;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+        child: Text(
+      resultPhrase,
+      style: TextStyle(
+        fontSize: 36,
+        fontWeight: FontWeight.bold,
+      ),
+    ));
+  }
+}
+```
+
+`main.dart`
+```
+import 'package:flutter/material.dart';
+import './quiz.dart';
+import './result.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return _MyAppState();
+  }
+}
+
+class _MyAppState extends State<MyApp> {
+  final _questions = const [
+    {
+      'questionText': 'What\'s your favorite color?',
+      'answers': [
+        {'text': 'Black', 'score': 10},
+        {'text': 'Red', 'score': 5},
+        {'text': 'Green', 'score': 3},
+        {'text': 'White', 'score': 1},
+      ],
+    },
+    {
+      'questionText': 'What\'s your favorite animal?',
+      'answers': [
+        {'text': 'Rabbit', 'score': 3},
+        {'text': 'Snake', 'score': 11},
+        {'text': 'Elephant', 'score': 5},
+        {'text': 'Lion', 'score': 9},
+      ],
+    },
+    {
+      'questionText': 'Who\'s your favorite instructor?',
+      'answers': [
+        {'text': 'Max', 'score': 1},
+        {'text': 'Max', 'score': 1},
+        {'text': 'Max', 'score': 1},
+        {'text': 'Max', 'score': 1},
+      ],
+    },
+  ];
+  var _questionIndex = 0;
+  var _totalScore = 0;
+
+  void _answerQuestion(int score) {
+    _totalScore += score;
+    setState(() {
+      _questionIndex++;
+    });
+    if (_questionIndex < _questions.length) {
+      print('We have more questions');
+    } else {
+      print('No mo');
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('My First App'),
+        ),
+        // if true after question mark it runs
+        body: _questionIndex < _questions.length
+            ? Quiz(
+                answerQuestion: _answerQuestion,
+                questionIndex: _questionIndex,
+                questions: _questions)
+            : Result(_totalScore),
+      ),
+    );
+  }
+}
+```
