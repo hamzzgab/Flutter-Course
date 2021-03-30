@@ -10,10 +10,10 @@
     - [Accessing the elements inside the list](#accessing-the-elements-inside-the-list)
     - [Stateless vs Stateful](#stateless-vs-stateful)
     - [Converting stateless to Statefull](#converting-stateless-to-statefull)
-4. [Widget from a new file 📁](#widget-from-a-new-file)
+4. [Widget from a new file 📁](#widget-from-a-new-file-)
     - [Styling & Layout](#styling-&-layout)
-6. [Passing Callback Functions Around 🤙](#passing-callback-functions-around)
-7. [Mapping Lists To Widgets 🗺️](#mapping-lists-to-widgets)
+6. [Passing Callback Functions Around 🤙](#passing-callback-functions-around-)
+7. [Mapping Lists To Widgets 🗺️](#mapping-lists-to-widgets-)
 
 # Creating Normal Hello App 🍍
 ![image](https://user-images.githubusercontent.com/47095611/112745594-41322000-8fc7-11eb-9159-fc711cecb4f4.png)
