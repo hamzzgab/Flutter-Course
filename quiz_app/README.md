@@ -264,3 +264,94 @@ return Container(
  style: TextStyle(fontSize: 28),
         textAlign: TextAlign.center,
 ```
+
+### Passing Callback Functions Around
+![image](https://user-images.githubusercontent.com/47095611/112948729-09a5ae00-9156-11eb-80f8-f0856dc7fa1a.png)
+`answer.dart`
+```
+import 'package:flutter/material.dart';
+
+class Answer extends StatelessWidget {
+  // Value has to be a function
+  final Function selectHandler;
+
+  //Constructor storing the function
+  Answer(this.selectHandler);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        width: double.infinity,
+        child: RaisedButton(
+          color: Colors.blue,
+          textColor: Colors.white,
+          child: Text('Answer 1'),
+          // Using the function
+          onPressed: selectHandler,
+        ));
+  }
+}
+```
+`final Function selectHandler;` specifies that the value that is being passed is supposed to be a function, `final` defines that it cannot be changed
+
+`Answer(this.selectHandler);` the constructor is storing the pointer to the function
+
+`onPressed: selectHandler` passes the pointer to the `_answerQuestion` function
+
+- **Button Styling**
+  1. `color: Colors.blue` sets the color to blue
+  2. `textColor: Colors.white` text color is set to white
+
+
+`main.dart`
+```
+import 'package:flutter/material.dart';
+import './question.dart';
+import './answer.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatefulWidget {
+  @override
+  State<StatefulWidget> createState() {
+    return _MyAppState();
+  }
+}
+
+class _MyAppState extends State<MyApp> {
+  var _questionIndex = 0;
+  void _answerQuestion() {
+    setState(() {
+      _questionIndex++;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    var questions = ["What's your fav color", "What's your fav animal"];
+
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('My First App'),
+        ),
+        body: Column(
+          children: <Widget>[
+            Question(questions[_questionIndex]),            
+            Answer(_answerQuestion),
+            Answer(_answerQuestion),
+            Answer(_answerQuestion),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+```
+`import './answer.dart';` imports the answer file for displaying the buttons
+
+`Answer(_answerQuestion)` is a pointer to the `_answerQuestion` function without the paranthesis because you want to execute the function *forwards the pointer to the function*
+
+
+
