@@ -102,7 +102,7 @@ body: Column(
           ],
         ),
   ```
-  # Connecting Fuctions & Buttons
+  # Connecting Fuctions & Buttons 🔗
   
   ![image](https://user-images.githubusercontent.com/47095611/112752088-ec0a0480-8fee-11eb-9141-d7a84483a716.png)
 
@@ -163,7 +163,7 @@ RaisedButton(
             ),
 ```
 
-**Anonymous Functions**
+## Anonymous Functions
 ```
 onPressed: () => print('Answer 2 chosen!'),
 ```
@@ -172,7 +172,7 @@ onPressed: () {
                 print('Answer 3 Chosen!');
               },
 ```
-**Accessing the elements inside the list**
+## Accessing the elements inside the list
 ```
 children: <Widget>[
             Text(questions[0]),
@@ -181,14 +181,14 @@ children: <Widget>[
 children: <Widget>[
             Text(questions.elementAt(0)),
 ```
-**Stateless vs Stateful**
+## Stateless vs Stateful
 | Stateless | Stateful |
 |-----|-----|
 | Input Data :arrow_right: Widget :arrow_right: Renders UI | Input Data :arrow_right: Widget + Internal State :arrow_right: Renders UI |
 | Data can change(externally) | Data can change(externally) |
 | Gets (re)-rendered when input data changes | Gets (re)-rendered when input data or local State changes |
 
-### Converting stateless to Statefull
+## Converting stateless to Statefull
 1. First we create a class 
    - Returns `MyAppState()` so this is connected to the main class
 ```
@@ -220,7 +220,7 @@ void answerQuestion() {
   }
 ```
 
-#### Widget from a new file
+# Widget from a new file 📁
 **question.dart**
 ```
 import 'package:flutter/material.dart';
@@ -249,7 +249,7 @@ children: <Widget>[
 - `import './question.dart';` importing the `question.dart` file 
 - `Question()` constructor that calls the class and passes the value
 
-#### Styling & Layout
+## Styling & Layout
 ```
 return Container(
       width: double.infinity,
@@ -273,7 +273,7 @@ return Container(
         textAlign: TextAlign.center,
 ```
 
-### Passing Callback Functions Around
+# Passing Callback Functions Around 🤙
 ![image](https://user-images.githubusercontent.com/47095611/112948729-09a5ae00-9156-11eb-80f8-f0856dc7fa1a.png)
 
 `answer.dart`
@@ -363,7 +363,7 @@ class _MyAppState extends State<MyApp> {
 `Answer(_answerQuestion)` is a pointer to the `_answerQuestion` function without the paranthesis because you want to execute the function *forwards the pointer to the function*
 
 
-#### Mapping Lists To Widgets
+# Mapping Lists To Widgets 🗺️
 ![image](https://user-images.githubusercontent.com/47095611/112953998-9c951700-915b-11eb-8a98-f08d926e2d56.png)
 
 
