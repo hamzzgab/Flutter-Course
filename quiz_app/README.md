@@ -17,6 +17,8 @@
 8. [final vs const ♾️](#final-vs-const-%EF%B8%8F)
 9. ['if' Statements](#if-Statements)
 10. [Splitting the App into Widgets 💔](#splitting-the-app-into-widgets-)
+11. Getters & 'else-if'
+12. Resetting the quiz
 
 # Creating Normal Hello App 🍍
 ![image](https://user-images.githubusercontent.com/47095611/112745594-41322000-8fc7-11eb-9159-fc711cecb4f4.png)
@@ -831,3 +833,39 @@ class _MyAppState extends State<MyApp> {
   }
 }
 ```
+
+# Resetting the quiz
+`result.dart`
+
+```
+final Function resetHandler;
+Result(this.resultScore, this.resetHandler);
+
+@override
+  Widget build(BuildContext context) {
+    return Center(
+        child: Column(
+      children: [
+        Text(
+          resultPhrase,
+          style: TextStyle(
+            fontSize: 36,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        FlatButton(child: Text('Restart Quiz!'), onPressed: resetHandler)
+      ],
+    ));
+  }
+```
+
+`main.dart`
+```
+  void _resetQuiz() {
+    setState(() {
+      _questionIndex = 0;
+      _totalScore = 0;
+    });
+  }
+```
+`: Result(_totalScore, _resetQuiz),`
