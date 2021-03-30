@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 
 class Answer extends StatelessWidget {
-  // Value has to be a function
   final Function selectHandler;
   final String answerText;
 
-  //Constructor storing the function
   Answer(this.selectHandler, this.answerText);
 
   @override
