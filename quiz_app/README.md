@@ -14,6 +14,7 @@
     - [Styling & Layout](#styling--layout)
 6. [Passing Callback Functions Around 🤙](#passing-callback-functions-around-)
 7. [Mapping Lists To Widgets 🗺️](#mapping-lists-to-widgets-%EF%B8%8F)
+8. ['if' Statements](#'if'-Statements)
 
 # Creating Normal Hello App 🍍
 ![image](https://user-images.githubusercontent.com/47095611/112745594-41322000-8fc7-11eb-9159-fc711cecb4f4.png)
@@ -491,3 +492,9 @@ class Answer extends StatelessWidget {
  `Answer(this.selectHandler, this.answerText);` the answers will then be stored in this contructor
  
  `child: Text(answerText),` and printed using this Text box
+
+# 'if' Statements
+
+| and |
+|-----|-----|
+|True | True | True |
