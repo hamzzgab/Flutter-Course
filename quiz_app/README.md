@@ -496,5 +496,6 @@ class Answer extends StatelessWidget {
 # 'if' Statements
 
 | and |  | |
-|-----|-----| - |
-|True | True | True |
+|-----|-----| Yields |
+|True | True | ==True== |
+|True | False | ==True== |
