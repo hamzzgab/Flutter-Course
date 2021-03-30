@@ -502,6 +502,7 @@ class Answer extends StatelessWidget {
 - if the value will never change make it a const
 
 :heavy_check_mark: `var dummy = ['Hello'];`
+
 :x: `var dummy = const ['Hello'];` Const would give a error cause we can't change the value
 - Modifies the original list
 `dummy.add('Max'); `
