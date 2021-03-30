@@ -28,7 +28,23 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    var questions = ["What's your fav color", "What's your fav animal"];
+    // Map is a collection of key value pairs
+    // key could be a number or string
+    // Shorthand way to make it long way is using Map()
+    var questions = [
+      {
+        'questionText': "What's your fav color? ",
+        'answers': ['Black', 'Red', 'Green', 'White']
+      },
+      {
+        'questionText': "What's your fav animal? ",
+        'answers': ['Dog', 'Cat', 'Lion', 'Zebra']
+      },
+      {
+        'questionText': "Who's your fav instructor? ",
+        'answers': ['Hamzz', 'Hamzz', 'Hamzz', 'Hamzz']
+      }
+    ];
 
     return MaterialApp(
       home: Scaffold(
@@ -38,10 +54,21 @@ class _MyAppState extends State<MyApp> {
         body: Column(
           children: <Widget>[
             // calls the question file
-            Question(questions[_questionIndex]),
-            Answer(_answerQuestion),
-            Answer(_answerQuestion),
-            Answer(_answerQuestion),
+            Question(questions[_questionIndex]['questionText']),
+
+            // Returns a new list
+            // Tell dart answers will be a list of strings
+            // ... adds a spread operator
+            // take a list and they pull all the values out of the list
+            // and add them to the surrounding list
+            // as individual values
+            ...(questions[_questionIndex]['answers'] as List<String>)
+                .map((answer) {
+              // returns an answer widget
+
+              return Answer(_answerQuestion, answer);
+            }).toList()
+            // generates a new list
           ],
         ),
       ),
