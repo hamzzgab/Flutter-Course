@@ -356,8 +356,10 @@ class _MyAppState extends State<MyApp> {
 
 
 #### Mapping Lists To Widgets
+![image](https://user-images.githubusercontent.com/47095611/112953998-9c951700-915b-11eb-8a98-f08d926e2d56.png)
 
-`main.dart
+
+`main.dart`
 ```
 import 'package:flutter/material.dart';
 import './question.dart';
