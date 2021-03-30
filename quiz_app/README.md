@@ -495,16 +495,14 @@ class Answer extends StatelessWidget {
 
 # 'if' Statements
 
-| and |  |  |
+| and |  | Yields |
 |-----|-----|-----|
-| | | Yields |
 | True | True | True |
 | True | False | False |
 | False | False | False |
 
-| or |  |  |
+| or |  | Yields |
 |-----|-----|-----|
-| | | Yields |
 | True | True | True |
 | True | False | True |
 | False | False | False |
