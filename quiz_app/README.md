@@ -14,7 +14,7 @@
     - [Styling & Layout](#styling--layout)
 6. [Passing Callback Functions Around 🤙](#passing-callback-functions-around-)
 7. [Mapping Lists To Widgets 🗺️](#mapping-lists-to-widgets-%EF%B8%8F)
-8. [final vs const ♾️](#final-vs-const-)
+8. [final vs const ♾️](#final-vs-const-%EF%B8%8F)
 9. ['if' Statements](#if-Statements)
 
 # Creating Normal Hello App 🍍
