@@ -17,8 +17,8 @@
 8. [final vs const ♾️](#final-vs-const-%EF%B8%8F)
 9. ['if' Statements](#if-Statements)
 10. [Splitting the App into Widgets 💔](#splitting-the-app-into-widgets-)
-11. [Getters & 'else-if' 🤲](#getters--else-if)
-12. Resetting the quiz
+11. [Getters & 'else-if' 🤲](#getters--else-if-)
+12. [Resetting the quiz](#resetting-the-quiz)
 
 # Creating Normal Hello App 🍍
 ![image](https://user-images.githubusercontent.com/47095611/112745594-41322000-8fc7-11eb-9159-fc711cecb4f4.png)
