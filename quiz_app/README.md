@@ -3,23 +3,6 @@
 - every flutter app is a widget
 - widgets contain other widgets
 
-1. [Creating Normal Hello App 🍍](#creating-normal-hello-app-)
-2. [Building a Widget Tree 🌲](#building-a-widget-tree-)
-3. [Connecting Functions & Buttons 🔗](#connecting-fuctions--buttons-)
-    - [Anonymous Functions](#anonymous-functions)
-    - [Accessing the elements inside the list](#accessing-the-elements-inside-the-list)
-    - [Stateless vs Stateful](#stateless-vs-stateful)
-    - [Converting stateless to Statefull](#converting-stateless-to-statefull)
-4. [Widget from a new file 📁](#widget-from-a-new-file-)
-    - [Styling & Layout](#styling--layout)
-6. [Passing Callback Functions Around 🤙](#passing-callback-functions-around-)
-7. [Mapping Lists To Widgets 🗺️](#mapping-lists-to-widgets-%EF%B8%8F)
-8. [final vs const ♾️](#final-vs-const-%EF%B8%8F)
-9. ['if' Statements](#if-Statements)
-10. [Splitting the App into Widgets 💔](#splitting-the-app-into-widgets-)
-11. Getters & 'else-if'
-12. Resetting the quiz
-
 # Creating Normal Hello App 🍍
 ![image](https://user-images.githubusercontent.com/47095611/112745594-41322000-8fc7-11eb-9159-fc711cecb4f4.png)
 
@@ -602,6 +585,17 @@ class Quiz extends StatelessWidget {
   }
 }
 ```
+Creating a new file for displaying the answers
+
+`final List<Map<String, Object>> questions;` defining the questions in a variable, setting the type since it's a map
+
+```
+Quiz(
+      {@required this.questions,
+      @required this.answerQuestion,
+      @required this.questionIndex});
+```
+anything inside {} is a named parameter
 
 `result.dart`
 ```
@@ -614,6 +608,7 @@ class Result extends StatelessWidget {
   }
 }
 ```
+Result page is the final page displaying the output after the last question
 
 `main.dart`
 ```
@@ -678,8 +673,17 @@ class _MyAppState extends State<MyApp> {
 }
 ```
 
+```
+Quiz(
+     answerQuestion: _answerQuestion,
+     questionIndex: _questionIndex,
+     questions: _questions)
+: Result()
+```
+Sending the variables to the `quiz.dart` file, and then calling the Result file
 
-# Getters & 'else-if'
+
+# Getters & 'else-if' 🤲
 `quiz.dart`
 ```
 import 'package:flutter/material.dart';
@@ -703,8 +707,7 @@ class Quiz extends StatelessWidget {
         Question(questions[questionIndex]['questionText']),
         ...(questions[questionIndex]['answers'] as List<Map<String, Object>>)
             .map((answer) {
-          // only address is passed using () =>
-          // now it executs the function
+
           return Answer(() => answerQuestion(answer['score']), answer['text']);
         }).toList()
       ],
@@ -712,6 +715,7 @@ class Quiz extends StatelessWidget {
   }
 }
 ```
+Only address is passed using `() =>`, now it executes the function with the score variable
 
 `result.dart`
 ```
@@ -722,9 +726,6 @@ class Result extends StatelessWidget {
 
   Result(this.resultScore);
 
-  // getter is a mixture of propety and method
-  // type of value you want t derive
-  // add get keyword and any word you want
 
   String get resultPhrase {
     var resultText = 'You did it';
@@ -753,6 +754,11 @@ class Result extends StatelessWidget {
   }
 }
 ```
+Getter is a mixture of propety and method 
+
+`String get resultPhrase {`
+1. Type of value you want to derive
+2. Add `get` keyword and any word you want
 
 `main.dart`
 ```
