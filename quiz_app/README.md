@@ -602,6 +602,17 @@ class Quiz extends StatelessWidget {
   }
 }
 ```
+Creating a new file for displaying the answers
+
+`final List<Map<String, Object>> questions;` defining the questions in a variable, setting the type since it's a map
+
+```
+Quiz(
+      {@required this.questions,
+      @required this.answerQuestion,
+      @required this.questionIndex});
+```
+anything inside {} is a named parameter
 
 `result.dart`
 ```
@@ -614,6 +625,7 @@ class Result extends StatelessWidget {
   }
 }
 ```
+Result page is the final page displaying the output after the last question
 
 `main.dart`
 ```
@@ -678,6 +690,15 @@ class _MyAppState extends State<MyApp> {
 }
 ```
 
+```
+Quiz(
+     answerQuestion: _answerQuestion,
+     questionIndex: _questionIndex,
+     questions: _questions)
+: Result()
+```
+Sending the variables to the `quiz.dart` file, and then calling the Result file
+
 
 # Getters & 'else-if'
 `quiz.dart`
@@ -703,8 +724,7 @@ class Quiz extends StatelessWidget {
         Question(questions[questionIndex]['questionText']),
         ...(questions[questionIndex]['answers'] as List<Map<String, Object>>)
             .map((answer) {
-          // only address is passed using () =>
-          // now it executs the function
+
           return Answer(() => answerQuestion(answer['score']), answer['text']);
         }).toList()
       ],
@@ -712,6 +732,7 @@ class Quiz extends StatelessWidget {
   }
 }
 ```
+Only address is passed using `() =>`, now it executes the function with the score variable
 
 `result.dart`
 ```
@@ -722,9 +743,6 @@ class Result extends StatelessWidget {
 
   Result(this.resultScore);
 
-  // getter is a mixture of propety and method
-  // type of value you want t derive
-  // add get keyword and any word you want
 
   String get resultPhrase {
     var resultText = 'You did it';
@@ -753,6 +771,11 @@ class Result extends StatelessWidget {
   }
 }
 ```
+Getter is a mixture of propety and method 
+
+`String get resultPhrase {`
+1. Type of value you want to derive
+2. Add `get` keyword and any word you want
 
 `main.dart`
 ```
