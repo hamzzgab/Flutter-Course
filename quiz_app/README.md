@@ -700,7 +700,7 @@ Quiz(
 Sending the variables to the `quiz.dart` file, and then calling the Result file
 
 
-# Getters & 'else-if'
+# Getters & 'else-if' 🤲
 `quiz.dart`
 ```
 import 'package:flutter/material.dart';
