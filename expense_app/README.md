@@ -1,16 +1,69 @@
 # expense_app
 
-A new Flutter project.
+# Understanding Column Alignment
 
-## Getting Started
+`main.dart`
+```
+import 'package:flutter/material.dart';
 
-This project is a starting point for a Flutter application.
+void main() => runApp(MyApp());
 
-A few resources to get you started if this is your first Flutter project:
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter App',
+      home: MyHomePage(),
+    );
+  }
+}
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+class MyHomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Flutter App'),
+      ),
+      body: Column(
+        children: [      
+          Container(
+            width: double.infinity,
+            child: Card(
+              color: Colors.blue,
+              child: Text('List of Tx!'),
+            ),
+          ),
+          Card(
+            child: Text('List of Tx!'),
+          ),
+        ],
+      ),
+    );
+  }
+}
+```
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Can do it both ways because it takes the width of the parent
+
+Wrap stuff in a container to change with width 
+```
+Card(
+  color: Colors.blue,
+  child: Container(
+    width: double.infinity,
+    child: Text('CHART!'),
+    ),
+   elevation: 5,
+   ),
+```
+
+```
+Container(
+  width: double.infinity,
+  child: Card(
+    color: Colors.blue,
+    child: Text('List of Tx!'),
+    ),
+),
+```
