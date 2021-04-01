@@ -173,3 +173,23 @@ In the `Column()`
 - It gives the instace of that object
   - So we need to wrap it around `{}`
   - `\$` is used to escape the dollar keyword
+
+## Adding Text Input Widgets ➕
+![Uploading image.png…]()
+
+`main.dart`
+```
+children: [
+      TextField(
+        decoration: InputDecoration(labelText: 'Title'),
+      ),
+      TextField(
+        decoration: InputDecoration(labelText: 'Amount'),
+      ),
+      FlatButton(
+        child: Text('Add Transaction'),
+        textColor: Colors.purple,
+        onPressed: () {},
+      )
+```
+labelText is like a placeholder
