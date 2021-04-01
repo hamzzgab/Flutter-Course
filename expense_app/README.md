@@ -76,7 +76,6 @@ class Transaction {
 - `DateTime`
   - Built into dart, it is a complex object
 
-
 `main.dart`
 `import './transaction.dart';`
 ```
@@ -96,3 +95,5 @@ class Transaction {
   ];
 ```
 - Creating a `List<Transaction>` _List of transactions_ from the transaction class
+
+# Mapping Data into Widgets 🗺️
