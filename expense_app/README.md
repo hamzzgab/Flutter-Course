@@ -193,3 +193,53 @@ children: [
       )
 ```
 labelText is like a placeholder
+
+# Fetching User Input 🤾
+![image](https://user-images.githubusercontent.com/47095611/113346634-bd26c200-9351-11eb-8457-691991afdac5.png)
+
+1. Method (best)
+```
+final titleController = TextEditingController();
+final amountController = TextEditingController();
+```
+```
+ TextField(
+  decoration: InputDecoration(labelText: 'Title'),
+  controller: titleController,
+),
+TextField(
+  decoration: InputDecoration(labelText: 'Amount'),
+  controller: amountController,  
+),
+FlatButton(
+  onPressed: () {
+    print(titleController.text);
+  },
+)
+```
+2. Okayish way
+```
+String titleInput;
+String amountInput;
+```
+```
+TextField(
+  decoration: InputDecoration(labelText: 'Title'),  
+  onChanged: (val) {
+    titleInput = val;
+  },
+),
+TextField(
+  decoration: InputDecoration(labelText: 'Amount'),
+  controller: amountController,
+  onChanged: (val) => amountInput = val,
+),
+FlatButton(
+  child: Text('Add Transaction'),
+  textColor: Colors.purple,
+  onPressed: () {
+    print(titleInput + amountInput);
+  },
+)
+```
+Value gets stored at every key stroke
