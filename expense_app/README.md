@@ -1,16 +1,53 @@
 # expense_app
 
-A new Flutter project.
+# Combining Widgets ⚔️
 
-## Getting Started
+`main.dart`
+Can do it both ways because it takes the width of the parent
 
-This project is a starting point for a Flutter application.
+Wrap stuff in a container to change with width 
+```
+Card(
+  color: Colors.blue,
+  child: Container(
+    width: double.infinity,
+    child: Text('CHART!'),
+    ),
+   elevation: 5,
+   ),
+```
 
-A few resources to get you started if this is your first Flutter project:
+```
+Container(
+  width: double.infinity,
+  child: Card(
+    color: Colors.blue,
+    child: Text('List of Tx!'),
+    ),
+),
+```
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+# Understanding Column Alignment 👽
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Column
+  - `mainAxisAlignment:` goes from **top to bottom**
+  - `crossAxisAlignment:` goes from **left to right**
+- Row
+  - `mainAxisAlignment:` goes from **left to right**
+  - `crossAxisAlignment:` goes from **top to bottom**
+
+**for Columns mainly**
+- `mainAxisAlignment:` elements:
+  - `MainAxisAlignment.`
+    1. start
+    2. center
+    3. end
+    4. spaceBetween 
+    5. spaceAround 
+    6. spaceEvenly
+- `crossAxisAlignment:` elements:
+  - `CrossAxisAlignment.`
+    1. start
+    2. center
+    3. end
+    4. stretch
