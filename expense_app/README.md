@@ -175,7 +175,7 @@ In the `Column()`
   - `\$` is used to escape the dollar keyword
 
 ## Adding Text Input Widgets ➕
-![Uploading image.png…]()
+![image](https://user-images.githubusercontent.com/47095611/113345093-98c9e600-934f-11eb-9744-3a564f8df9b9.png)
 
 `main.dart`
 ```
