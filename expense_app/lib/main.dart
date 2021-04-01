@@ -20,24 +20,21 @@ class MyHomePage extends StatelessWidget {
         title: Text('Flutter App'),
       ),
       body: Column(
+        // mainAxisAlignment: , top to bottom (start center end) (spaceBetween spaceAround spaceEvenly)
+        mainAxisAlignment: MainAxisAlignment.center,
+
+        // crossAxisAlignment: ,left to right (start center end) (stretc)
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          // Card(
-          //   color: Colors.blue,
-          //   child: Container(
-          //     width: double.infinity,
-          //     child: Text('CHART!'),
-          //   ),
-          //   elevation: 5,
-          // ),
-          // Can do it both ways
           Container(
             width: double.infinity,
             child: Card(
               color: Colors.blue,
-              child: Text('List of Tx!'),
+              child: Text('Chart!'),
             ),
           ),
           Card(
+            color: Colors.red,
             child: Text('List of Tx!'),
           ),
         ],
@@ -45,3 +42,7 @@ class MyHomePage extends StatelessWidget {
     );
   }
 }
+
+// Row
+// crossAxisAlignment: , top to bottom
+// mainAxisAlignment: , left to right
