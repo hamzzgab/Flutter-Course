@@ -1,6 +1,6 @@
 # expense_app
 
-# Understanding Column Alignment
+# Combining Widgets ⚔️
 
 `main.dart`
 Can do it both ways because it takes the width of the parent
@@ -26,3 +26,28 @@ Container(
     ),
 ),
 ```
+
+# Understanding Column Alignment 👽
+
+- Column
+  - `mainAxisAlignment:` goes from **top to bottom**
+  - `crossAxisAlignment:` goes from **left to right**
+- Row
+  - `mainAxisAlignment:` goes from **left to right**
+  - `crossAxisAlignment:` goes from **top to bottom**
+
+**for Columns mainly**
+- `mainAxisAlignment:` elements:
+  - `MainAxisAlignment.`
+    1. start
+    2. center
+    3. end
+    4. spaceBetween 
+    5. spaceAround 
+    6. spaceEvenly
+- `crossAxisAlignment:` elements:
+  - `CrossAxisAlignment.`
+    1. start
+    2. center
+    3. end
+    4. stretch
