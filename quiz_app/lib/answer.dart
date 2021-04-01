@@ -20,6 +20,3 @@ class Answer extends StatelessWidget {
         ));
   }
 }
-
-// final vs const
-//
