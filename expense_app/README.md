@@ -109,3 +109,64 @@ class Transaction {
 ```
 - To help us make a bunch of widgets we use map
 - `map` takes a function that gets execcted
+
+# Building Custom List item 🏗️
+![image](https://user-images.githubusercontent.com/47095611/113293834-e9235280-9313-11eb-9455-5d80c022f911.png)
+
+`main.dart`
+```
+return Card(
+        child: Row(
+          children: [
+            Container(              
+              child: Text(tx.amount.toString()),
+            ),
+            Column(
+              children: [
+                Text(tx.title),
+                Text(tx.date.toString()),
+              ],
+            )
+          ],
+        ),
+      );
+```
+- Normaly to arguments require a string to convert it use toString() - `tx.amount.toString()`
+
+## Styling a Container 🖌️
+`main.dart`
+```
+margin:
+  EdgeInsets.symmetric(vertical: 10, horizontal: 15),  
+  decoration: BoxDecoration(
+    border: Border.all(color: Colors.black, width: 2),
+  ),
+  padding: EdgeInsets.all(10),
+```
+
+- `decoration: BoxDecoration(border: Border.all()),` gives a normal border
+
+## Styling Text ✏️
+`main.dart`
+```
+child: Text(
+        tx.amount.toString(),
+        style: TextStyle(
+          fontWeight: FontWeight.bold,
+          fontSize: 20,
+          color: Colors.green,
+        ),
+      ),
+```
+
+In the `Column()`
+`crossAxisAlignment: CrossAxisAlignment.start,`
+
+## String Interpolation 🎣
+`main.dart`
+
+`tx.amount.toString()` can be written as `'\$${tx.amount}',`
+
+- `$` is used to reference variables, it is a _reserved character_
+- It gives the instace of that object
+  - So we need to wrap it around `{}`
