@@ -163,6 +163,8 @@ In the `Column()`
 `crossAxisAlignment: CrossAxisAlignment.start,`
 
 ## String Interpolation 🎣
+![image](https://user-images.githubusercontent.com/47095611/113298439-7321ea00-9319-11eb-8f10-842c6beb7df6.png)
+
 `main.dart`
 
 `tx.amount.toString()` can be written as `'\$${tx.amount}',`
@@ -170,3 +172,4 @@ In the `Column()`
 - `$` is used to reference variables, it is a _reserved character_
 - It gives the instace of that object
   - So we need to wrap it around `{}`
+  - `\$` is used to escape the dollar keyword
