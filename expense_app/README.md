@@ -97,3 +97,15 @@ class Transaction {
 - Creating a `List<Transaction>` _List of transactions_ from the transaction class
 
 # Mapping Data into Widgets 🗺️
+`main.dart`
+```
+ Column(      
+      children: transactions.map((tx) {
+        return Card(
+          child: Text(tx.title),
+        );
+      }).toList(),
+    )
+```
+- To help us make a bunch of widgets we use map
+- `map` takes a function that gets execcted
