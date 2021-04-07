@@ -1,4 +1,7 @@
-import './transaction.dart';
+import 'package:expense_app/widgets/user_transactions.dart';
+
+import './widgets/new_transaction.dart';
+import './widgets/transaction_list.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -14,20 +17,11 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
-  final List<Transaction> transactions = [
-    Transaction(
-      id: 't1',
-      title: 'New Shoes',
-      amount: 69.99,
-      date: DateTime.now(),
-    ),
-    Transaction(
-      id: 't2',
-      title: 'Gross-eries',
-      amount: 14.53,
-      date: DateTime.now(),
-    ),
-  ];
+  // String titleInput;
+  // String amountInput;
+
+  final titleController = TextEditingController();
+  final amountController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -35,67 +29,22 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Flutter App'),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Container(
-            width: double.infinity,
-            child: Card(
-              color: Colors.blue,
-              child: Text('Chart!'),
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Container(
+              width: double.infinity,
+              child: Card(
+                color: Colors.blue,
+                child: Text('Chart!'),
+                elevation: 6,
+              ),
             ),
-          ),
-          Column(
-            // map takes a function that gets execcted
-            children: transactions.map((tx) {
-              return Card(
-                child: Row(
-                  children: [
-                    Container(
-                      margin:
-                          EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-                      // decoration: BoxDecoration(border: Border.all()),
-                      decoration: BoxDecoration(
-                        border: Border.all(color: Colors.green, width: 2),
-                      ),
-                      padding: EdgeInsets.all(10),
-                      child: Text(
-                        // $ is used to reference variables (reserved character)
-                        // gives the instace of that object
-                        // need to wrap the variable in {} because we use .amount
-                        '\$${tx.amount}',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                          color: Colors.green,
-                        ),
-                      ),
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          tx.title,
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                          ),
-                        ),
-                        Text(
-                          tx.date.toString(),
-                          style: TextStyle(
-                            color: Colors.grey,
-                          ),
-                        ),
-                      ],
-                    )
-                  ],
-                ),
-              );
-            }).toList(),
-          )
-        ],
+            UserTransaction(),
+          ],
+        ),
       ),
     );
   }
