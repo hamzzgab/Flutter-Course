@@ -173,3 +173,73 @@ In the `Column()`
 - It gives the instace of that object
   - So we need to wrap it around `{}`
   - `\$` is used to escape the dollar keyword
+
+## Adding Text Input Widgets ➕
+![image](https://user-images.githubusercontent.com/47095611/113345093-98c9e600-934f-11eb-9744-3a564f8df9b9.png)
+
+`main.dart`
+```
+children: [
+      TextField(
+        decoration: InputDecoration(labelText: 'Title'),
+      ),
+      TextField(
+        decoration: InputDecoration(labelText: 'Amount'),
+      ),
+      FlatButton(
+        child: Text('Add Transaction'),
+        textColor: Colors.purple,
+        onPressed: () {},
+      )
+```
+labelText is like a placeholder
+
+# Fetching User Input 🤾
+![image](https://user-images.githubusercontent.com/47095611/113346634-bd26c200-9351-11eb-8457-691991afdac5.png)
+
+1. Method (best)
+```
+final titleController = TextEditingController();
+final amountController = TextEditingController();
+```
+```
+ TextField(
+  decoration: InputDecoration(labelText: 'Title'),
+  controller: titleController,
+),
+TextField(
+  decoration: InputDecoration(labelText: 'Amount'),
+  controller: amountController,  
+),
+FlatButton(
+  onPressed: () {
+    print(titleController.text);
+  },
+)
+```
+2. Okayish way
+```
+String titleInput;
+String amountInput;
+```
+```
+TextField(
+  decoration: InputDecoration(labelText: 'Title'),  
+  onChanged: (val) {
+    titleInput = val;
+  },
+),
+TextField(
+  decoration: InputDecoration(labelText: 'Amount'),
+  controller: amountController,
+  onChanged: (val) => amountInput = val,
+),
+FlatButton(
+  child: Text('Add Transaction'),
+  textColor: Colors.purple,
+  onPressed: () {
+    print(titleInput + amountInput);
+  },
+)
+```
+Value gets stored at every key stroke
