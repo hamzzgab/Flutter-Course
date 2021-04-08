@@ -174,6 +174,8 @@ In the `Column()`
   - So we need to wrap it around `{}`
   - `\$` is used to escape the dollar keyword
 
+`'\$${transactions[index].amount.toStringAsFixed(2)}',` for only 2 digit fractions
+
 ## Adding Text Input Widgets ➕
 ![image](https://user-images.githubusercontent.com/47095611/113345093-98c9e600-934f-11eb-9744-3a564f8df9b9.png)
 
@@ -275,6 +277,7 @@ body: SingleChildScrollView(
     - .builder() - only showss you what's visible when using very long lists
 
 # ListViews 🚴
+`transaction_list.dart`
 ```
 return Container(
     height: 300,
@@ -309,3 +312,13 @@ return Container(
   - Which returns Context and the index in an anonymous function
   - Here you don't need to use map aas the index is being passed with `itemCount: transactions.length`
   - And the Elements are accessed with `transaction[index].amount`
+
+# TextField only Takes Number ☎️
+```
+TextField(
+  decoration: InputDecoration(labelText: 'Amount'),
+  controller: amountController,
+  keyboardType: TextInputType.number,
+),
+```
+`keyboardType` Takes an arguyment TextInputType.number
