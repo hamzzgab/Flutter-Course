@@ -243,3 +243,69 @@ FlatButton(
 )
 ```
 Value gets stored at every key stroke
+
+# Adding a New Transaction 🆕
+```
+void _addNewTransaction(String title, double amount) {
+  final newTx = Transaction(
+      id: DateTime.now().toString(),
+      title: title,
+      amount: amount,
+      date: DateTime.now());
+
+  setState(() {
+    _userTransaction.add(newTx);
+  });
+}
+```
+`Transaction()` is the object to the transaction model class `_userTransaction()` is the array to which we append the value
+
+# Making the List Scrollble 📜
+```
+body: SingleChildScrollView(
+      child: Column(
+```
+`SingleChildScrollView` enaables the scrolling functionality
+
+- Instead of this use 
+  - `ListView` in the Column which is scrollable
+    - Has an Infinite height/ Can't have a fixed height
+    - Has a `ScrollDirection` option
+    - children: []
+    - .builder() - only showss you what's visible when using very long lists
+
+# ListViews 🚴
+```
+return Container(
+    height: 300,
+    child: ListView.builder(
+      itemBuilder: (ctx, index) {
+        return Card(
+            child: Row(children: [
+          Container(
+              margin: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+              decoration: BoxDecoration(
+                  border: Border.all(color: Colors.green, width: 2)),
+              padding: EdgeInsets.all(10),
+              child: Text('\$${transactions[index].amount}',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                      color: Colors.green))),
+          Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            Text(transactions[index].title,
+                style:
+                    TextStyle(fontWeight: FontWeight.bold, fontSize: 16)),
+            Text(transactions[index].date.toString(),
+                style: TextStyle(color: Colors.grey))
+          ])
+        ]));
+      },
+      itemCount: transactions.length,
+    ));
+```
+- Needs a container to specify the height of the `ListView`
+- `ListView.builder()` needs an object `itemBuilder`
+  - Which returns Context and the index in an anonymous function
+  - Here you don't need to use map aas the index is being passed with `itemCount: transactions.length`
+  - And the Elements are accessed with `transaction[index].amount`
