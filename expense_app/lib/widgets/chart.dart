@@ -13,6 +13,7 @@ class Chart extends StatelessWidget {
         final weekDay = DateTime.now().subtract(
           Duration(days: index),
         );
+
         var totalSum = 0.0;
 
         for (var i = 0; i < recentTransactions.length; i++) {
@@ -31,7 +32,7 @@ class Chart extends StatelessWidget {
           'amount': totalSum,
         };
       },
-    );
+    ).reversed.toList();
   }
 
   double get totalSpending {
@@ -57,9 +58,9 @@ class Chart extends StatelessWidget {
                 // flex: 1, distributing available space
                 fit: FlexFit.tight,
                 child: ChartBar(
-                    label: data['day'],
-                    spendingAmount: data['amount'],
-                    spendingPctOfTotal: totalSpending == 0.0
+                    data['day'],
+                    data['amount'],
+                    totalSpending == 0.0
                         ? 0.0
                         : (data['amount'] as double) / totalSpending),
               );
