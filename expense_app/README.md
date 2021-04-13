@@ -322,3 +322,45 @@ TextField(
 ),
 ```
 `keyboardType` Takes an arguyment TextInputType.number
+
+# Adding Icons & Floating Buttons 🦄
+```
+appBar: AppBar(
+  title: Text('Persosnal Expenses'),
+  actions: <Widget>[
+    IconButton(
+      icon: Icon(Icons.add),
+      onPressed: () => _startAddNewTransaction(context))])
+```
+`Icons.add` is for the different icon buttons 
+```
+floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+floatingActionButton: FloatingActionButton(
+  child: Icon(
+    Icons.add),
+  onPressed: () => _startAddNewTransaction(context))
+```
+We add the floating button below the Scaffold for easy alignment
+`FloatingActionButtonLocation` can be used for changing the location of the button
+
+## Connecting icons to Modal 💃
+```
+void _startAddNewTransaction(BuildContext ctx) {
+  showModalBottomSheet(
+    context: ctx,
+    builder: (_) {
+      return GestureDetector(
+        onTap: () {},
+        child: Newtransaction(_addNewTransaction),
+        behavior: HitTestBehavior.opaque,
+      );
+    },
+  );
+}
+```
+Takes context as an argument
+
+`onTap` is used when you tap outside the screen to quit the modal
+
+`child:` is for adding the new transaction widget
+
