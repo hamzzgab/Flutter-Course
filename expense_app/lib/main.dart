@@ -32,7 +32,10 @@ class MyApp extends StatelessWidget {
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
               ),
-              button: TextStyle(color: Colors.white, fontFamily: 'OpenSans'),
+              button: TextStyle(
+                color: Colors.white,
+                fontFamily: 'OpenSans',
+              ),
             ),
 
         // For all AppBars
